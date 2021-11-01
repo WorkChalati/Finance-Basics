@@ -3,38 +3,29 @@ import pandas as pd
 from pandas_datareader import data as wb
 import matplotlib as plt
 
-
-# In[11]:
-
-
 ser = pd.Series(np.random.random(5), name = "Column 01")
-
-
-# In[12]:
-
 
 ser
 
+PLTR = wb.DataReader('PLTR', data_source='yahoo', start='1995-1-1')
 
-# In[pull [2] from ser column]:
+PLTR
 
+# In[Data comes out looking finee and organized :)]:
+# More fun can do 
 
-ser[2]
+PLTR.info()
+PLTR.head()
+PLTR.tail()
+PLTR.head(2)
+PLTR.tail(2)
 
-# In[The data we're looking for]:
+#Find a group of tickers to compare side by side
 
+tickers = ['PG','BB','PLTR','IDEX','GRWG','ICLN']
+new_data = pd.DataFrame()
+for t in tickers:
+        new_data[t]=wb.DataReader(t, data_source='yahoo', start='2016-1-1')['Adj Close']
 
-PG = wb.DataReader('PG', data_source='yahoo', start='1995-1-1')
-
-
-# In[16]:
-
-
-PG
-
-
-# In[Data comes out looking finee and organized :) ]:
-
-
-
-
+#Find the last few years of data
+new_data.tail()
