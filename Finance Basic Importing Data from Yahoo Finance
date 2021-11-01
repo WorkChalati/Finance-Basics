@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
-
 import numpy as np
 import pandas as pd
 from pandas_datareader import data as wb
@@ -22,13 +16,12 @@ ser = pd.Series(np.random.random(5), name = "Column 01")
 ser
 
 
-# In[13]:
+# In[pull [2] from ser column]:
 
 
 ser[2]
 
-
-# In[15]:
+# In[The data we're looking for]:
 
 
 PG = wb.DataReader('PG', data_source='yahoo', start='1995-1-1')
@@ -40,7 +33,7 @@ PG = wb.DataReader('PG', data_source='yahoo', start='1995-1-1')
 PG
 
 
-# In[ ]:
+# In[Data comes out looking finee and organized :) ]:
 
 
 
