@@ -1,6 +1,17 @@
 import pandas as pd
 
-df = pd.read_csv('C:/Users/workc/OneDrive/Desktop/DATA/survey_results_public.csv')
+df = pd.read_csv('C:/Users/workc/OneDrive/Desktop/DATA/survey_results_public.csv') #data set 1
 
 df
+
+df.shape
+
+df.info()
+
+pd.set_option('display.max_columns', 85)
+pd.set_option('display.max_rows', 85)
+
+schema_df = pd.read_csv('C:/Users/workc/OneDrive/Desktop/DATA/survey_results_schema.csv') #data set 2
+
+schema_df
 
